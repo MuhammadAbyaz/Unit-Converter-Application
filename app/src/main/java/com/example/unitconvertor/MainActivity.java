@@ -25,9 +25,13 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
 //                    Toast.makeText(MainActivity.this, "Hi click listener worked", Toast.LENGTH_SHORT).show();
                     String s = editText.getText().toString();
-                    int kg =Integer.parseInt(s);
-                    double pound = 2.20462 * kg;
-                    textView.setText("The corresponding Pounds value is " + pound);
+                    if (!s.isEmpty()) {
+                        int kg =Integer.parseInt(s);
+                        double pound = 2.20462 * kg;
+                        textView.setText("The corresponding Pounds value is " + pound);
+                    } else {
+                        textView.setText("Please enter a value.");
+                    }
                 }
             });
         }
